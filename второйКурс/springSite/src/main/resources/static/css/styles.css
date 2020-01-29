@@ -1,0 +1,19 @@
+.footer-container {
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px 0px 0px 0px;
+    border-top: 1px solid #ccc;
+}
+/* прячем родную стралочку */
+.select-wrapper-foo select {
+    /* for Firefox */
+    -moz-appearance: none;
+
+    /* for Chrome */
+    -webkit-appearance: none;
+}
+
+/* For IE10 */
+.select-wrapper-foo select::-ms-expand {
+    display: none;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" th:hre href = "{springMacroRequestContext.contextPath}/css/styles.css">
+    <!--<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" href="../static/css/styles.css"/>-->
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript"   ></script>
+
+    <style>
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        .row.content {
+            height: 450px
+        }
+
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+
+    </style>
+    <title>Корзина</title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <ul class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><img height="33" th:src="@{/static/remove-icon.jpg}" src="../static/remove-icon.jpg" width="92" border="0"></li>
+                    <li ><a href="/">Каталог</a></li>
+                    <li> <a href="/add">Добавить товар</a> </li>
+                    <li> <a href="/order">Посмотреть заказы</a> </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="/cart"><span class="glyphicon glyphicon-log-in"></span> Корзина</a>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </nav>
+    <ul>
+        <div th:if="${state}">
+            <h1 class="cart__title title title_h1">Корзина</h1>
+            <h2 th:text="'Корзина пуста'"/>
+        </div>
+        <div th:unless="${state}">
+            <h1 class="cart__title title title_h1">Корзина</h1>
+            <h1 th:text="'Номера заказа ' + ${order}"/>
+            <div th:each="orderDetail : ${orderDetails}">
+                <h2 th:text="'Название товара ' + ${orderDetail.getGoods().name}"/>
+                <p th:text="'Количество товара '"/>
+                <!--<form th:action="@{}">-->
+                    <div class="stepper stepper--style-2 js-spinner">
+                        <input autofocus name="" type="number" min="1" max="100" step="1" value="1" class="stepper__input">
+                        <div class="stepper__controls">
+                            <button type="button" spinner-button="up">+</button>
+                            <button type="button" spinner-button="down">−</button>
+                        </div>
+                    </div>
+                <!--</form>-->
+                <p th:text="'Цена ' + ${orderDetail.amount} + ' рублей'"/>
+                <hr/>
+            </div>
+            <p th:text="'Итого ' + ${wholePrice} + ' рублей'">
+            <form action="/cart" method="post">
+                <div>
+                    <label>Введите ваше имя: <input type="text" name = "username"></label>
+                    <label>Введите ваш email: <input type="text" name = "email"></label>
+                    <label>Введите номер телефона: <input type="text" name = "telephone" value="+7 "></label>
+                </div>
+                <input type="submit" value="Подтвердить заказ"/>
+            </form>
+        </div>
+
+    </ul>
+    <th:block th:include="/_footer"></th:block>
+</body>
+</html>

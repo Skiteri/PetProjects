@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cursovaya.controllers.filmController">
+   <children>
+      <TextField fx:id="filmName" layoutX="40.0" layoutY="28.0" promptText="Введите название" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </TextField>
+      <ChoiceBox fx:id="choiceCat" layoutX="51.0" layoutY="64.0" prefWidth="150.0">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </ChoiceBox>
+      <TextArea fx:id="describing" prefHeight="200.0" prefWidth="200.0" promptText="Введите описание">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </TextArea>
+      <Button fx:id="Reg" layoutX="44.0" layoutY="108.0" mnemonicParsing="false" onAction="#clickReg" prefHeight="25.0" prefWidth="164.0" text="Зарегистрироваться">
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </Button>
+      <Button fx:id="cancel" layoutX="90.0" layoutY="139.0" mnemonicParsing="false" onAction="#clickCancel" text="Отмена">
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="50.0" />
+   </padding>
+</VBox>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cursovaya.controllers.categoryListController">
+   <children>
+      <VBox>
+         <children>
+            <TableView fx:id="CatalogTable" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="630.0" prefWidth="400.0" styleClass="back-white" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="catalogId" prefWidth="75.0" text="C1" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" layoutX="509.0" layoutY="113.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="back-white" stylesheets="@../CSS/mainMenu.css" HBox.hgrow="ALWAYS">
+         <children>
+            <Label fx:id="nameCat" layoutX="720.0" layoutY="116.0" text="Выберите категорию">
+               <font>
+                  <Font size="44.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Фильмы:" />
+            <TableView fx:id="filmCat" prefHeight="237.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="filmId" prefWidth="75.0" text="C1" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../CSS/table.css" />
+      <URL value="@../CSS/mainMenu.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="back-transparent" />
+      <String fx:value="back-light-grey" />
+   </styleClass>
+</HBox>

@@ -1,0 +1,43 @@
+.column-header-background{
+    -fx-max-height: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+}
+
+.table-view {
+    -fx-box-border : transparent;
+}
+
+.table-row-cell {
+    -fx-background-color: #ececec;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 5;
+    -fx-min-height: 115;
+    -fx-text-alignment: CENTER;
+}
+
+.table-cell {
+    -fx-alignment: CENTER;
+    -fx-font-family: Verdana;
+    -fx-font-size: 20;
+}
+
+
+.table-column {
+    -fx-border-width: 0;
+}
+
+.table-row-cell:empty{
+    -fx-background-color: #ffffff;
+}
+
+.table-row-cell:selected{
+    -fx-background-color: #4f5d55;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-arrow,
+.table-view *.scroll-bar:horizontal *.decrement-arrow {
+    -fx-max-height: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+}
