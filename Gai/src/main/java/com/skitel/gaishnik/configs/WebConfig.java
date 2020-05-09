@@ -7,5 +7,12 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.skitel.gaishnik")
-public class WebConfig {
+public class WebConfig{
+//
+//    @Bean
+//    @Scope(value = "prototype")
+//    Number getNumber() {
+//        return new Number();
+//    }
+
 }
